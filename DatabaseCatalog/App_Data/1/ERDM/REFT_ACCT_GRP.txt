@@ -1,0 +1,1 @@
+{"tableName":"REFT_ACCT_GRP","tableAttributes":{"cardinality":"60","noOfColumns":"14","noOfKeyColumns":"2","recordLength":118,"noOfPages":3,"percentagePages":4,"noOfParents":0,"noOfChildren":0,"dBName":"ERDM    ","tSName":"null","createdTime":"2016-08-17 10:45:20.210544","lastAltered":"2016-08-31 14:29:46.9317","lastStatistics":"2016-11-07 17:28:46.189407","remarks":"null"}}

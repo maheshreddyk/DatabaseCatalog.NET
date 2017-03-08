@@ -1,0 +1,72 @@
+<style>
+#ibm-content-main .ibm-columns p{
+  padding-bottom: 0px !important;
+}
+</style>
+
+<div class="ibm-columns">
+	<div class="ibm-col-6-5" style="width: 900px; position: relative; z-index: 1;">
+		<div class="ibm-ribbon">
+			<p class="cgspMainInfo">
+
+			</p>
+
+			<div class="ibm-container"  style="border-top:2px solid black; width: 850px;">
+			    <div>
+			      <p><strong>Data Dictionary</strong></p><p></p>
+			    </div>
+				<div class="cgspContainerBody ibm-container-body">
+
+					<div class="ibm-columns">
+						<div class="ibm-col-1-1">
+						<div style="margin-left:10px">
+					  About Data Dictionary
+
+						</div>
+						</div>
+					</div>
+			   </div>
+			</div>
+		</div>
+	</div>
+
+                    <div class="ibm-col-6-1" style="width:220px;height:auto; position: relative; z-index: 2;">
+                    		<!-- Single Column Form -->
+                    		<div class="ibm-container" style="margin-left:10px; padding-top: 5px; border-top:2px solid black;display:block;" id="cgspLoginSection">
+                    <form>
+                    <div class="alert alert-danger" ng-show="loginCtrl.error.length >0"> {{loginCtrl.error}}</div> 
+<!--
+                        <div class="alert alert-dismissible alert-info">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong>Test users!</strong> <br/>
+                            <ul>
+                                <li><strong>steve / steve</strong> with admin role</li>
+                                <li><strong>bill / bill</strong> with user role</li>
+                            </ul>
+                        </div> -->
+
+                        <p>
+                        			<label><strong>Intranet ID:</strong><span class="ibm-required">*</span></label>
+                              <input id="login" type="text" class="form-control" ng-model="loginCtrl.username"
+                                     required="required"/>
+                        			</p>
+                        			<p>
+                        				<label path="password" ><strong>Password: </strong><span class="ibm-required">*</span></label>
+                                <input id="password" type="password" class="form-control" ng-model="loginCtrl.password"
+                                       required="required"/>
+                        			 <p class="ibm-ind-link"> <a class="ibm-forward-link" href="https://w3.ibm.com/profile/update/password/en-us/index.html"  target="_blank">Forgot your password?</a></p>
+                               <div class="checkbox">
+                                 <label>
+                                     <input type="checkbox" ng-model="loginCtrl.rememberMe"/><span> Remember me</span>
+                                 </label>
+                               </div>
+  <div class="col-sm-offset-3 col-sm-6">
+                            <button class="btn btn-default" ng-click="loginCtrl.login()">
+                              <strong>  Login </strong>
+                            </button>
+                        </div>
+
+                    </form>
+                  </div>
+                </div>
+                </div>

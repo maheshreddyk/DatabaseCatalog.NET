@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="user-scalable=yes, maximum-scale=2, width=1024"
+          name="viewport" />
+    <title>Database Catalog</title>
+    <link rel="stylesheet" href="../Content/custom.css">
+    <link rel="stylesheet" href="../Content/bootstrap.css">
+    <link rel="stylesheet" href="../Content/font-awesome.min.css">
+    
+    <style>
+       
+
+        .fixed-panel {
+            height: 600px;
+            overflow-y: auto;
+        }
+
+        .clsTable.active {
+            background-color: #F2F3C7 !important;
+            color: black !important;
+        }
+
+        .blueColor {
+            color: rgb(47, 97, 134);
+        }
+
+        .parentNav {
+            font-family: initial;
+        }
+    </style>
+</head>
+<body ng-app="app" ng-strict-di id="ibm-com">
+    <loading class="loading-indicator"></loading>
+    <div id="wrapper">
+        <br />
+        <br />
+        <br />
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <navigation ></navigation>
+        </div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <ui-view>
+                            <div class="text-center initial-loading">
+                                <h2>Loading Site...</h2>
+                            </div>
+                        </ui-view>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <script language="JavaScript" src="//w3.ibm.com/w3webmetrics/js/ntpagetag.js" type="text/javascript"></script>
+    </div>
+    <!-- FOOTER_END -->
+    <!-- Libs -->
+    <script src="../Scripts/jquery-2.1.4.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/angular/angular.js"></script>
+    <script src="../Scripts/angular/angular-ui-router.min.js"></script>
+
+
+    <!-- Common Module -->
+    <script src="src/common/common.module.js"></script>
+    <script src="src/common/loader/loading.component.js"></script>
+    <script src="src/common/loader/loading.interceptor.js"></script>
+    <script src="src/common/localStorage.service.js"></script>
+    <script src="src/common/profile/user.service.js"></script>
+    <script src="src/common/profile/session.service.js"></script>
+    <script src="src/common/profile/authentication.service.js"></script>
+    <script src="src/common/auth/auth.service.js"></script>
+    <script src="src/common/bootstrap/tabs.directive.js"></script>
+    <script src="src/common/menu.service.js"></script>
+    <!-- Public Module -->
+    <script src="src/public/public.module.js"></script>
+    <script src="src/public/public.routes.js"></script>
+    <script src="src/public/navigation/navigation.component.js"></script>
+    <script src="src/public/table/table.controller.js"></script>
+    <script src="src/public/login/login.controller.js"></script>
+    <script src="src/public/login/logout.controller.js"></script>
+    <script src="src/public/public.controller.js"></script>
+
+    <!--  Admin Module -->
+    <script src="src/admin/admin.module.js"></script>
+    <script src="src/admin/admin.routes.js"></script>
+
+    <!-- Main  Module -->
+    <script src="src/main.module.js"></script>
+    <script src="src/main.controller.js"></script>
+
+
+
+
+    <!-- ADMIN SITE -->
+    <!--Application files -->
+
+</body>
+
+</html>

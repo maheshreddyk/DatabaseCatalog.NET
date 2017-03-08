@@ -1,0 +1,67 @@
+<!--  NAVIGATION -->
+
+
+    <div class="panel list-group fixed-panel col-lg-3">
+        <a href="#" class="list-group-item active" data-toggle="collapse" data-target="#app" data-parent="#menu"> <span> APPLICATIONS</span></a>
+        <div id="app" class="sublinks collapse in">
+            <!-- List of Applications -->
+            <div ng-repeat='application in $ctrl.applications'>
+                <a class="list-group-item parentNav" data-toggle="collapse" data-target="#App_{{application.appId}}" data-parent="#app">&nbsp;&nbsp;<span class="fa fa-caret-right" ></span> {{application.desc}}</a>
+                <div id="App_{{application.appId}}" class="sublinks collapse">
+                  <!-- Filter Textbox for each Application -->
+                    <div style="padding:3px;">
+                        <input type="text" ng-model="application.filterText" placeholder="Filter by table Name" ng-change="$ctrl.filter(application)"  />
+                    </div>
+                    <!-- List of Creators -->
+                    <div ng-repeat='creator in application.creators'>
+                        <a class="list-group-item small clsCreator" style="font-family:initial; background-color:aliceblue;" data-toggle="collapse" data-target="#CREATOR_{{creator.name}}"
+                        data-parent="#App_{{application.appId}} ">&nbsp;&nbsp;&nbsp;&nbsp;<span class="fa fa-caret-right" ></span>  {{creator.name}}</a>
+                        <div id="CREATOR_{{creator.name}}" class="sublinks collapse" ng-class="{'in': application.filterText.length >0 }">
+                            <div ng-repeat='table in creator.tables'>
+                                <a class="clsTable list-group-item small " ng-class="{active : $ctrl.activeMenuTable == table}" ng-click="$ctrl.setActive(table)" ui-sref="table({appId : '{{application.appId}}', creator: '{{creator.name}}', table:'{{table}}' })"
+                                    style="font-family:initial;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-
+                                    <!-- <span class="fa fa-table" ></span>  -->
+                                    {{table}}
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="list-group-item " data-toggle="collapse" data-target="#sl" data-parent="#menu"> ADMIN </a>
+        <div id="sl" class="sublinks collapse">
+            <a class="list-group-item parentNav" ui-sref="admin">&nbsp;&nbsp;<span class="fa fa-caret-right"></span> Applications Editor</a>
+            <a class="list-group-item parentNav" ui-sref="admin"> &nbsp;&nbsp;<span class="fa fa-caret-right"></span> Link2</a>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+<script>
+    $(document).ready(function() {
+        $('.list-group').on('click', '> a', function(e) {
+            var $this = $(this);
+            $('.list-group').find('.active').removeClass('active');
+            $this.addClass('active');
+            // alert($this.attr('href') + ' is active');
+        });
+        $('.clsTable').on('click', function() {
+            console.log("Table clicked");
+        });
+
+
+        $("a").on('click', function(){
+          $(this).parents("li.has-items").addClass("custom");
+        });
+
+    });
+</script>
+<!--  END NAVIGATION -->
